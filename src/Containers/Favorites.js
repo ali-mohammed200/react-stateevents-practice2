@@ -1,15 +1,19 @@
 import React from "react";
 import BeyCard from "../Components/BeyCard"
 
-class BeyContainer extends React.Component {
+class Favorites extends React.Component {
+
   render() {
+
     let beyObj = this.props.beys;
-    let arrOfBeys = beyObj.map(bey => {
+    let filterBeys = beyObj.filter(bey => bey.favorite)
+    console.log(filterBeys)
+    let arrOfBeys = filterBeys.map(bey => {
       return <BeyCard key={bey.id} name={bey.name} img={bey.img} favorite={bey.favorite} id={bey.id}/>
     })
 
     return (
-      <div className="index">
+      <div className="favorites">
         <h1>Index</h1>
         {arrOfBeys}
       </div>
@@ -17,4 +21,4 @@ class BeyContainer extends React.Component {
   }
 }
 
-export default BeyContainer;
+export default Favorites;
