@@ -7,9 +7,8 @@ class Favorites extends React.Component {
 
     let beyObj = this.props.beys;
     let filterBeys = beyObj.filter(bey => bey.favorite)
-    console.log(filterBeys)
     let arrOfBeys = filterBeys.map(bey => {
-      return <BeyCard key={bey.id} name={bey.name} img={bey.img} favorite={bey.favorite} id={bey.id}/>
+      return <BeyCard key={bey.id} name={bey.name} img={bey.img} favorite={bey.favorite} id={bey.id} faveFunc={this.props.faveFunc}/>
     })
 
     return (
